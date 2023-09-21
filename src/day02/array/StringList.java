@@ -7,7 +7,7 @@ public class StringList {
     //스트링 배열을 필드로 등록
     String[] sArr;//{ "짜장면", "짬뽕", "탕수육" }
     //생성자를 통해 배열을 초기화
-    StringList(){
+    public StringList(){
         sArr = new String[0];
     }
     StringList(String... initData){
@@ -16,7 +16,7 @@ public class StringList {
             sArr[i] = initData[i];
         }
     }
-    void push(String item){
+    public void push(String item){
         String[] temp = new String[sArr.length+1]; //{"", "", "", ""}
         for (int i = 0; i <sArr.length ; i++) {
             temp[i] = sArr[i];//{"짜장면", "짬뽕", "탕수육", ""}
@@ -52,5 +52,9 @@ public class StringList {
 
     void printArray(){
         System.out.println(Arrays.toString(sArr));
+    }
+
+    public String[] getsArr() {
+        return sArr;
     }
 }
